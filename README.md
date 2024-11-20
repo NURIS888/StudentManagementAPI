@@ -1,40 +1,22 @@
-"Что из себя представляет описываемый проект "Управление студентами" Student management? Это цифровая система, хранящая всю необходимую информацию обо всех студентах учебного заведения. Это, можно сказать, своего рода электронная картотека, содержащая данные о каждом студенте – его имя, фамилию, дату рождения, все его текущие оценки.  
-Что можно делать с помощью этой системы?
- 
-1.Добавлять новых студентов в систему: то есть вносить информацию о новых студентах в систему, когда они только поступают в учебное заведение. 
-2.Просматривать информацию о студентах: то есть находить нужного студента в системе по имени, фамилии, специальности и т.д., а также просматривать всю информацию о нём. 
-3.Менять информацию: то есть обновлять информацию о студенте, если он например, переехал и изменил адрес, или же поменял мобильный телефон. 
-4.Фильтровать данные: то есть выводить список студентов, соответствующий определенному условию.  К примеру, все студенты, обучающиеся на определенной специальности, или всех студентов, которые имеют какие-то задолженности. 
-5.Удалять записи о студентах: то есть удалять запись о студенте, когда он, к примеру, оказался выпускником или просто перестал учиться." 
+This is a system for managing student information in a computerized environment. It is an electronic library cart containing the particulars about the students in an establishment of learning in respect of their first names, last names, date of birth, and current grades attained.
 
+This system is designed to:
 
+* Input students into the system, which means inserting the information of the new students into the system as they join the institution.
+* View student information, which means finding a particular student in the system and viewing his or her information by name, last name, major, etc.
+* Update information, which means altering a student's information when, for instance, he or she moves to a new address or changes his or her phone number.
+* Filter the data; that is, prepare a list of students meeting certain criteria: all students in a particular program, or all students with outstanding debts.
+* Delete a student's records, i.e., information is removed from the system about a student after he or she has graduated or otherwise left the institution.
 
-Получить список всех студентов: GET /students
-Получить информацию о того студенте по его ID: GET /students/{id} (где {id} - это тот идентификатор студента)
-Добавить студента: POST /students 
-Обновить информацию о существующем студенте: PUT /students/{id}
-Убрать студента: DELETE /students/{id}
+API Endpoints Overview:
 
-Примеры запросов с фильтрацией:
-Получить список студентов, обучающихся на курсе "Математика": GET /students?course=Математика
-Получить список студентов с баллом выше 80: GET /students?score_gte=80
-Получить список студентов, чье имя начинается с "Иван": GET /students?name=Иван
-Получить список студентов, родившихся после 01.01.2000: GET /students?birthdate_gte=2000-01-01
+GET /students – Retrieve all students
+GET /students/123 – Retrieves the student with ID 123
+POST /students – Adds new student
+PUT /students/123 – Update data for the student, ID 123
+DELETE /students/123 – Delete student with ID 123
 
-GET /students             // Получить всех студентов
-GET /students/123        // Получить студента с ID 123
-POST /students          // Добавить нового студента
-PUT /students/123        // Обновить данные студента с ID 123
-DELETE /students/123     // Удалить студента с ID 123
-Дополнительные пояснения
-Методы HTTP: GET, POST, PUT, DELETE - это стандартные методы HTTP, используемые для взаимодействия с сервером.
-URL: Унифицированный указатель ресурса, уникальный адрес, по которому можно получить доступ к конкретному ресурсу (в данном случае, к информации о студентах).
-Параметры запроса: Используются для фильтрации результатов. Они передаются в URL после вопросительного знака и разделяются амперсандами (&).
+Additional details:
 
-Каков проект "Student Management" - "Управление студентами"? Это цифровая система, которая хранит все необходимые данные о всех студентах учебного учреждения. Это такая электронная карточка, где хранится информация по каждому студенту - его имя, фамилия, дата рождения, все его текущие оценки. 
-Что позволяет делать эта система?
-1.	Добавлять новых студентов в систему - т.е. вводить информацию о новых студентах в систему в тот момент, когда они только-только поступили в учебное заведение. 
-2.	Просматривать информацию о студентах - т.е. находить нужного студента в системе по имени, фамилии, специальности и т.д., а также просматривать всю информацию о нем. 
-3.	Изменять информацию - т.е. обновлять информацию о студенте, если он например, переехал и изменил адрес или же поменял мобильный телефон. 
-4.	Фильтровать данные - т.е. выводить список студентов, соответствующий определенному условию. Например, все студенты учебной программы "программное обеспечение" или все студенты, которые имеют какие-то задолженности. 
-5.	Удалять записи о студентах - т.е. удалять запись о студенте, когда он, например, стал выпускником или просто прекратил своё обучение. 
+HTTP Methods: GET, POST, PUT, and DELETE are standard HTTP methods used for interacting with a server.
+URL: A uniform resource locator is defined as a unique pointer to information on the world-opening of the Internet. 
